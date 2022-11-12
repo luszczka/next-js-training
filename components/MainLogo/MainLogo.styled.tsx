@@ -1,9 +1,10 @@
+import { TypographyProps } from "@mui/system";
 import styled from "styled-components"
 
-const StyledMainLogo = styled.div`
+const StyledMainLogo = styled.div<{centered: boolean, fontSize: TypographyProps["fontSize"]}>`
     color: #EAE2B7;
-    margin: auto;
-    font-size: 3rem;
+    margin: ${({centered}) => (centered ? "auto" : "unset")};
+    font-size: ${({ fontSize }) => (fontSize ? fontSize : "4rem")};
     font-weight: bold;
     opacity: .7;
     pointer-events: none;

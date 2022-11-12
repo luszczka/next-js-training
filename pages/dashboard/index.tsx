@@ -1,13 +1,18 @@
 import { ReactElement } from "react";
+import DrinkOfTheDay from "../../components/DrinkOfTheDay/DrinkOfTheDay";
+import Navigation from "../../components/Navigation/Navigation";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 
 const Dashboard = (): ReactElement => {
     return (
+
         <PageWrapper>
+        <Navigation />
+        <DrinkOfTheDay />
             <ul>
             <li>drink of the day</li>
             <li>my drinks</li>
-            <li>most popular</li>
+            <li>most liked</li>
             </ul>
             <ul>
             search by:
@@ -17,6 +22,7 @@ const Dashboard = (): ReactElement => {
             <li>ingredient</li>
             </ul>
         </PageWrapper>
+
     )
 }
 

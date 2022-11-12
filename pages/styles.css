@@ -1,11 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS';
     font-size: 16px;
-    background: linear-gradient(-45deg, #000, #003049, #d62828);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
     height: 100vh;
   }
 
@@ -13,14 +15,5 @@ body {
     text-decoration: none;
 }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+
+ 

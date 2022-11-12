@@ -1,11 +1,13 @@
+import { TypographyProps } from "@mui/system";
+import { ReactElement } from "react";
 import { StyledMainLogo } from "./MainLogo.styled";
 
 type Props = {
-    animated?: boolean;
+    fontSize?: TypographyProps["fontSize"];
 }
 
-const MainLogo = ({animated}: Props) => {
-    return <StyledMainLogo >drink.<span>me</span></StyledMainLogo>
+const MainLogo = ({fontSize}: Props): ReactElement => {
+    return <StyledMainLogo fontSize={fontSize}>drink.<span>me</span></StyledMainLogo>
 }
 
 export default MainLogo;

@@ -6,7 +6,7 @@ import PageWrapper from '../components/PageWrapper/PageWrapper';
 
 const HomePage = (): ReactElement => {
   return (
-    <PageWrapper>
+    <PageWrapper centered isAnimated>
       <Link href="/dashboard">
         <MainLogo />
       </Link>
