@@ -1,17 +1,17 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-const StyledPageWrapper = styled.div<{centered: boolean, isAnimated: boolean,}>`
+const StyledPageWrapper = styled.div<{ centered: boolean, isAnimated: boolean }>`
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: ${({centered}) => (centered ? "center" : "flex-start")};
+    justify-content: ${({ centered }) => (centered ? 'center' : 'flex-start')};
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: ${({isAnimated}) => (isAnimated ? "linear-gradient(-45deg, #000,#003049,#d62828)" : "linear-gradient(-45deg, #000, #003049)")};
-    background-size: ${({isAnimated}) => (isAnimated ? "300% 300%" : "100%")};
-    animation: ${({isAnimated}) => (isAnimated ? "gradient 10s ease infinite" : "")};
+    background: ${({ isAnimated }) => (isAnimated ? 'linear-gradient(-45deg, #000,#003049,#d62828)' : 'linear-gradient(-45deg, #000, #003049)')};
+    background-size: ${({ isAnimated }) => (isAnimated ? '300% 300%' : '100%')};
+    animation: ${({ isAnimated }) => (isAnimated ? 'gradient 10s ease infinite' : '')};
 
     @keyframes gradient {
     0% {
@@ -26,4 +26,4 @@ const StyledPageWrapper = styled.div<{centered: boolean, isAnimated: boolean,}>`
   }
 `
 
-export { StyledPageWrapper };
+export { StyledPageWrapper }
