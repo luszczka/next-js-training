@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { ReactElement, useState } from 'react';
-import Header from '../components/Header/Header';
+import { type ReactElement } from 'react';
 import MainLogo from '../components/MainLogo/MainLogo';
 import PageWrapper from '../components/PageWrapper/PageWrapper';
 
@@ -12,6 +11,6 @@ const HomePage = (): ReactElement => {
       </Link>
     </PageWrapper>
   );
-}
+};
 
 export default HomePage;
