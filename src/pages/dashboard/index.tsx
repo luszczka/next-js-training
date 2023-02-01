@@ -1,7 +1,7 @@
-import { type ReactElement } from 'react'
-import DrinkOfTheDay from '../../components/DrinkOfTheDay/DrinkOfTheDay'
-import Navigation from '../../components/Navigation/Navigation'
-import PageWrapper from '../../components/PageWrapper/PageWrapper'
+import { type ReactElement } from 'react';
+import DrinkOfTheDay from '../../components/DrinkOfTheDay/DrinkOfTheDay';
+import Navigation from '../../components/Navigation/Navigation';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 
 const Dashboard = (): ReactElement => {
   return (
@@ -21,7 +21,7 @@ const Dashboard = (): ReactElement => {
         <li>ingredient</li>
       </ul>
     </PageWrapper>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
