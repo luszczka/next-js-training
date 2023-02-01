@@ -1,14 +1,14 @@
-import { ReactElement, ReactNode } from "react";
-import { StyledPageWrapper } from "./PageWrapper.styled";
+import { type ReactElement, type ReactNode } from 'react'
+import { StyledPageWrapper } from './PageWrapper.styled'
 
-type Props = {
-    centered?: boolean;
-    children: ReactNode;
-    isAnimated?: boolean;
+interface Props {
+  centered?: boolean
+  children: ReactNode
+  isAnimated?: boolean
 }
 
-const PageWrapper = ({centered, children, isAnimated}: Props): ReactElement => {
-    return <StyledPageWrapper centered={centered} isAnimated={isAnimated}>{children}</StyledPageWrapper>;
-  }
+const PageWrapper = ({ centered, children, isAnimated }: Props): ReactElement => {
+  return <StyledPageWrapper centered={centered} isAnimated={isAnimated}>{children}</StyledPageWrapper>
+}
 
-export default PageWrapper;
+export default PageWrapper

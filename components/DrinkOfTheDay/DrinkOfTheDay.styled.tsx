@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const StyledDrinkOfTheDayWrapper = styled.div`
     width: 100vw;
@@ -16,4 +16,4 @@ const StyledDrinkOfTheDayHeader = styled.h2`
     opacity: .1;
 `
 
-export { StyledDrinkOfTheDayWrapper, StyledDrinkOfTheDayHeader };
+export { StyledDrinkOfTheDayWrapper, StyledDrinkOfTheDayHeader }

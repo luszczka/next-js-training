@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const StyledNavigation = styled.div`
     display: flex;
@@ -36,4 +36,4 @@ const StyledNavigation = styled.div`
     }
 `
 
-export { StyledNavigation };
+export { StyledNavigation }
