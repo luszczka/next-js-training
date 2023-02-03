@@ -1,12 +1,13 @@
 {
   "name": "drink-me",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "push": "yarn version --patch && git push --follow-tags",
     "prepare": "husky install"
   },
   "dependencies": {

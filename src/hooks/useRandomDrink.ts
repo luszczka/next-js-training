@@ -1,13 +1,13 @@
-import { type RandomDrink } from '../fetchers/APIResponsesTypes';
+import { type RandomDrink } from '../utils/APIResponsesTypes';
 import { useEffect, useState } from 'react';
 
 const useRandomDrink = (): RandomDrink | undefined => {
   const [data, setData] = useState<RandomDrink>();
 
   useEffect(() => {
-    const getRandomDrink = async (): Promise<void> => {
+    const fetchRandomDrink = async (): Promise<void> => {
       try {
-        const result = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php');
+        const result = await fetch(`${process.env.NEXT_PUBLIC_URL}/random.php`);
         const response = await result.json();
         setData(response.drinks[0]);
       } catch (error) {
@@ -15,7 +15,7 @@ const useRandomDrink = (): RandomDrink | undefined => {
       }
     };
 
-    void getRandomDrink();
+    void fetchRandomDrink();
   }, []);
 
   return data;

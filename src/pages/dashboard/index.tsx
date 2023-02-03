@@ -8,18 +8,6 @@ const Dashboard = (): ReactElement => {
     <PageWrapper>
       <Navigation />
       <DrinkOfTheDay />
-      <ul>
-        <li>drink of the day</li>
-        <li>my drinks</li>
-        <li>most liked</li>
-      </ul>
-      <ul>
-        search by:
-        <li>category</li>
-        <li>alcohol</li>
-        <li>glass</li>
-        <li>ingredient</li>
-      </ul>
     </PageWrapper>
   );
 };
