@@ -1,6 +1,10 @@
 {
+  "name": "drink-me",
+  "version": "1.0.1",
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky install"
