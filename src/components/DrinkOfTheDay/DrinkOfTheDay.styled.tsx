@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 const StyledDrinkOfTheDayWrapper = styled.div`
-    width: 100vw;
-    position: relative;
-`
+  width: 100%;
+  margin: 40px;
+  position: relative;
+`;
 
 const StyledDrinkOfTheDayHeader = styled.h2`
     color: #EAE2B7;
