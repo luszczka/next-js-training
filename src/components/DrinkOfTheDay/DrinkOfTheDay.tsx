@@ -1,29 +1,27 @@
 import { type ReactElement } from 'react';
-import useDrinkDetails from '../../hooks/useDrinkDetails';
-import useRandomDrink from '../../hooks/useRandomDrink';
-
+import useFetch from '../../hooks/useFetch';
+import { type RandomDrink } from '../../utils/APIResponsesTypes';
+import SingleBox from '../SingleBox/SingleBox';
 import { StyledDrinkOfTheDayHeader, StyledDrinkOfTheDayWrapper } from './DrinkOfTheDay.styled';
 
 const DrinkOfTheDay = (): ReactElement => {
-  const data = useRandomDrink();
-  const data2 = useDrinkDetails('11007');
-  console.log(data2);
+  const { data } = useFetch<{ drinks: RandomDrink[] }>('/random.php') || {};
+  const { drinks } = data ?? {};
 
-  if (!data) {
+  if (!drinks)
     return (
       <StyledDrinkOfTheDayWrapper>
-        <StyledDrinkOfTheDayHeader>drink of the day</StyledDrinkOfTheDayHeader>
+        <StyledDrinkOfTheDayHeader>no drinks today</StyledDrinkOfTheDayHeader>
       </StyledDrinkOfTheDayWrapper>
     );
-  }
 
   return (
-    <>
-      {data.strDrink}
+    drinks && (
       <StyledDrinkOfTheDayWrapper>
+        <SingleBox drinkName={drinks[0].strDrink} drinkImageUrl={drinks[0].strDrinkThumb} drinkID={drinks[0].idDrink} />
         <StyledDrinkOfTheDayHeader>drink of the day</StyledDrinkOfTheDayHeader>
       </StyledDrinkOfTheDayWrapper>
-    </>
+    )
   );
 };
 
