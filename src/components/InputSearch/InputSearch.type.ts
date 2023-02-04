@@ -4,7 +4,6 @@ type OptionValue = string | number | readonly string[] | undefined;
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string;
-  fetcher: () => Promise<void>;
   setValue: Dispatch<SetStateAction<string>>;
 }
 
