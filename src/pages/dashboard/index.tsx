@@ -13,7 +13,7 @@ const Dashboard = (): ReactElement => {
   const debouncedOnChange = useRef(debounce(fetcher, 700));
 
   useEffect(() => {
-    debouncedOnChange.current(`/search.php?s=${value}`);
+    void debouncedOnChange.current(`/search.php?s=${value}`);
   }, [value]);
 
   return (
