@@ -5,15 +5,15 @@ import SingleBox from '../SingleBox/SingleBox';
 import { StyledDrinkOfTheDayHeader, StyledDrinkOfTheDayWrapper } from './DrinkOfTheDay.styled';
 
 const DrinkOfTheDay = (): ReactElement => {
-  const { data } = useFetch<{ drinks: RandomDrink[] }>('/random.php') || {};
-  const { drinks } = data ?? {};
-
-  if (!drinks)
+  const { data } = useFetch<{ drinks: RandomDrink[] }>('/random.php');
+  if (!data)
     return (
       <StyledDrinkOfTheDayWrapper>
         <StyledDrinkOfTheDayHeader>no drinks today</StyledDrinkOfTheDayHeader>
       </StyledDrinkOfTheDayWrapper>
     );
+
+  const { drinks } = data;
 
   return (
     drinks && (
