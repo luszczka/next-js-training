@@ -35,7 +35,6 @@ export const StyledSingleBoxImg = styled.div`
 
 export const StyledSingleBoxText = styled.p`
   color: #a5ab95;
-  cursor: pointer;
   opacity: 0.5;
   font-size: 35px;
   line-height: 1;
@@ -46,4 +45,5 @@ export const StyledSingleBoxText = styled.p`
   margin: 0;
   overflow: hidden;
   transition: transform 0.3s ease-in, opacity 0.4s ease-in-out;
+  user-select: none;
 `;

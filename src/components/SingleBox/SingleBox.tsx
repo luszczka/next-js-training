@@ -5,7 +5,7 @@ import { StyledSingleBoxImg, StyledSingleBoxText, StyledSingleBoxWrapper } from 
 import { type SingleBoxTypes } from './SingleBox.types';
 
 const SingleBox = ({ drinkName, drinkImageUrl, drinkID }: SingleBoxTypes): ReactElement => {
-  const { data } = useFetch<{ drinks: DrinkDetails[] }>(`/lookup.php?i=${drinkID}`) || {};
+  const { data } = useFetch<{ drinks: DrinkDetails[] }>({ path: `/lookup.php?i=${drinkID}` });
 
   return (
     <StyledSingleBoxWrapper>
