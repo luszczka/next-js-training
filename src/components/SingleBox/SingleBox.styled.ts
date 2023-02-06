@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledSingleBoxWrapper = styled.div`
   border: 5px solid #b39048;
   border-radius: 20px;
+  cursor: pointer;
   max-width: 250px;
   overflow: hidden;
   width: 100%;
@@ -35,7 +36,6 @@ export const StyledSingleBoxImg = styled.div`
 
 export const StyledSingleBoxText = styled.p`
   color: #a5ab95;
-  cursor: pointer;
   opacity: 0.5;
   font-size: 35px;
   line-height: 1;
@@ -46,4 +46,5 @@ export const StyledSingleBoxText = styled.p`
   margin: 0;
   overflow: hidden;
   transition: transform 0.3s ease-in, opacity 0.4s ease-in-out;
+  user-select: none;
 `;

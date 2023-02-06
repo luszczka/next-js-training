@@ -5,7 +5,7 @@ import SingleBox from '../SingleBox/SingleBox';
 import { StyledDrinkOfTheDayHeader, StyledDrinkOfTheDayWrapper } from './DrinkOfTheDay.styled';
 
 const DrinkOfTheDay = (): ReactElement => {
-  const { data } = useFetch<{ drinks: RandomDrink[] }>('/random.php');
+  const { data } = useFetch<{ drinks: RandomDrink[] }>({ path: '/random.php' });
   if (!data)
     return (
       <StyledDrinkOfTheDayWrapper>
