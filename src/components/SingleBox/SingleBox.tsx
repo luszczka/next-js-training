@@ -1,28 +1,21 @@
 import { type ReactElement } from 'react';
-import useFetch from '../../hooks/useFetch';
-import { type DrinkDetails } from '../../utils/APIResponsesTypes';
+import Link from 'next/link';
 import { StyledSingleBoxImg, StyledSingleBoxText, StyledSingleBoxWrapper } from './SingleBox.styled';
 import { type SingleBoxTypes } from './SingleBox.types';
 
 const SingleBox = ({ drinkName, drinkImageUrl, drinkID }: SingleBoxTypes): ReactElement => {
-  const { data } = useFetch<{ drinks: DrinkDetails[] }>({ path: `/lookup.php?i=${drinkID}` });
-
   return (
-    <StyledSingleBoxWrapper>
-      <StyledSingleBoxImg
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,1)), url('${drinkImageUrl}')`,
-        }}
-      >
-        <StyledSingleBoxText
-          onClick={() => {
-            console.log(data);
+    <Link href={{ pathname: `/drinkDetails`, query: { drinkID } }}>
+      <StyledSingleBoxWrapper>
+        <StyledSingleBoxImg
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,1)), url('${drinkImageUrl}')`,
           }}
         >
-          {drinkName}
-        </StyledSingleBoxText>
-      </StyledSingleBoxImg>
-    </StyledSingleBoxWrapper>
+          <StyledSingleBoxText>{drinkName}</StyledSingleBoxText>
+        </StyledSingleBoxImg>
+      </StyledSingleBoxWrapper>
+    </Link>
   );
 };
 

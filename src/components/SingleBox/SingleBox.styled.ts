@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledSingleBoxWrapper = styled.div`
   border: 5px solid #b39048;
   border-radius: 20px;
+  cursor: pointer;
   max-width: 250px;
   overflow: hidden;
   width: 100%;

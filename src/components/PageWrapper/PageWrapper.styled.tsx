@@ -6,6 +6,7 @@ const StyledPageWrapper = styled.div<{ centered: boolean; isAnimated: boolean }>
   flex-direction: column;
   justify-content: ${({ centered }) => (centered ? 'center' : 'flex-start')};
   width: 100vw;
+  min-height: 100vh;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -13,6 +14,7 @@ const StyledPageWrapper = styled.div<{ centered: boolean; isAnimated: boolean }>
     isAnimated ? 'linear-gradient(-45deg, #000,#003049,#d62828)' : 'linear-gradient(-45deg, #000, #003049)'};
   background-size: ${({ isAnimated }) => (isAnimated ? '300% 300%' : '100%')};
   animation: ${({ isAnimated }) => (isAnimated ? 'gradient 10s ease infinite' : '')};
+  position: relative;
 
   @keyframes gradient {
     0% {
