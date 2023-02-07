@@ -7,11 +7,7 @@ const SingleBox = ({ drinkName, drinkImageUrl, drinkID }: SingleBoxTypes): React
   return (
     <Link href={{ pathname: `/drinkDetails`, query: { drinkID } }}>
       <StyledSingleBoxWrapper>
-        <StyledSingleBoxImg
-          style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,1)), url('${drinkImageUrl}')`,
-          }}
-        >
+        <StyledSingleBoxImg drinkImgUrl={drinkImageUrl}>
           <StyledSingleBoxText>{drinkName}</StyledSingleBoxText>
         </StyledSingleBoxImg>
       </StyledSingleBoxWrapper>
