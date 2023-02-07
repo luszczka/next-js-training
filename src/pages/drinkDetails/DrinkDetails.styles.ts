@@ -7,6 +7,7 @@ export const StyledBackgroundWrapper = styled.div<{
   min-height: 100vh;
   height: 100%;
   opacity: 0.09;
+  position: absolute;
 
   ${({ drinkImgUrl }) =>
     drinkImgUrl &&
@@ -16,22 +17,77 @@ export const StyledBackgroundWrapper = styled.div<{
     `};
 `;
 
-export const StyledIngredientsWrapper = styled.div`
+export const StyledMainWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  left: 20px;
-  position: absolute;
-  top: 30%;
-  width: 400px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 100px 0;
+  width: 100%;
 `;
 
-export const StyledIngredientsHeader = styled.p`
+export const StyledRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 40px;
+`;
+
+export const StyledLeftHeader = styled.p`
   color: #fff;
   font-size: 2rem;
   font-weight: 700;
   opacity: 0.7;
-  left: 20px;
-  position: absolute;
-  top: 20%;
+  text-align: left;
+`;
+
+export const StyledRightHeader = styled.p`
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  opacity: 0.7;
+  text-align: right;
+`;
+
+export const StyledIngredientsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 400px;
+`;
+
+export const StyledMeasurementsWrapper = styled.div`
+  color: #fff;
+  opacity: 0.7;
+  display: flex;
+`;
+
+export const StyledMeasureNamesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px 20px 0;
+
+  div {
+    padding: 0 20px 20px 0;
+  }
+`;
+
+export const StyledMeasureValuesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+
+  div {
+    padding: 0 0 20px 0;
+  }
+`;
+
+export const StyledTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  opacity: 0.7;
+`;
+
+export const StyledText = styled.p`
+  padding: 20px 0;
 `;
