@@ -1,20 +1,25 @@
 import styled from 'styled-components'
 
 const StyledDrinkOfTheDayWrapper = styled.div`
-  width: 100%;
-  margin: 40px;
+  align-items: center;
+  display: flex;
+  margin: 60px 0;
+  justify-content: center;
   position: relative;
+  width: 100%;
+  z-index: 1;
 `;
 
 const StyledDrinkOfTheDayHeader = styled.h2`
-    color: #EAE2B7;
-    font-size: 4rem;
-    word-spacing: 100vw;
-    position: absolute;
-    text-align: right;
-    top: 0;
-    right: 0;
-    opacity: .1;
-`
+  color: #eae2b7;
+  font-size: 10rem;
+  line-height: 7rem;
+  word-spacing: 100vw;
+  text-align: right;
+  opacity: 0.03;
+  position: absolute;
+  user-select: none;
+  z-index: -1;
+`;
 
 export { StyledDrinkOfTheDayWrapper, StyledDrinkOfTheDayHeader }

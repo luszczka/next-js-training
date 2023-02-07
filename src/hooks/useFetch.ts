@@ -5,7 +5,12 @@ interface UseFetchResult<T> {
   fetcher: (url?: string) => Promise<void>;
 }
 
-const useFetch = <T>(path: string): UseFetchResult<T> => {
+interface Props {
+  path: string;
+  enabled?: boolean;
+}
+
+const useFetch = <T>({ path, enabled = true }: Props): UseFetchResult<T> => {
   const [data, setData] = useState<T | undefined>();
   const fetcher = async (url?: string): Promise<void> => {
     try {
@@ -18,7 +23,9 @@ const useFetch = <T>(path: string): UseFetchResult<T> => {
     }
   };
   useEffect(() => {
-    void fetcher(path);
+    if (enabled) {
+      void fetcher(path);
+    }
   }, []);
 
   return { data, fetcher };
