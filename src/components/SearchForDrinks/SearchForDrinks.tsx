@@ -6,15 +6,23 @@ import useFetch from '../../hooks/useFetch';
 import { type DrinksByName } from '../../utils/APIResponsesTypes';
 import InputSearch from './InputSearch/InputSearch';
 import SingleBox from '../SingleBox/SingleBox';
+import { type SearchTypeProps, SearchTypeQuery, SearchTypeSubdirectory } from './SearchType.utils';
+import { CreateFetchURL } from '../../utils/CreateFetchURL';
+import SearchTypes from './SearchType/SearchType';
 
 const SearchForDrinks = (): ReactElement => {
   const [value, setValue] = useState<string>('');
-  const { data, fetcher } = useFetch<{ drinks: DrinksByName[] }>({ path: `/search.php?s=${value}`, enabled: false });
+  const [searchType, setSearchType] = useState<SearchTypeProps>({
+    subdirectory: SearchTypeSubdirectory.search,
+    query: SearchTypeQuery.name,
+  });
+  const fetchUrl = CreateFetchURL({ searchType, value });
+  const { data, fetcher } = useFetch<{ drinks: DrinksByName[] }>({ path: fetchUrl, enabled: false });
   const debouncedOnChange = useRef(debounce(fetcher, 700));
 
   useEffect(() => {
     if (value) {
-      void debouncedOnChange.current(`/search.php?s=${value}`);
+      void debouncedOnChange.current(fetchUrl);
     }
   }, [value]);
 
@@ -24,6 +32,7 @@ const SearchForDrinks = (): ReactElement => {
     <Container>
       <StyledInputWrapper>
         <InputSearch value={value} setValue={setValue} />
+        <SearchTypes setSearchType={setSearchType} />
       </StyledInputWrapper>
       <StyledBoxesWrapper>
         {drinks === null && <div>no drinks in database</div>}
