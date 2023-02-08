@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledSingleBoxWrapper = styled.div`
   border: 5px solid #b39048;
@@ -19,7 +19,12 @@ export const StyledSingleBoxWrapper = styled.div`
   }
 `;
 
-export const StyledSingleBoxImg = styled.div`
+export const StyledSingleBoxImg = styled.div<{ drinkImgUrl: string }>`
+  ${({ drinkImgUrl }) =>
+    drinkImgUrl &&
+    css`
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(${drinkImgUrl});
+    `};
   width: 100%;
   height: 300px;
   padding: 20px;
