@@ -8,12 +8,14 @@ interface Props {
 }
 
 const SearchTypes = ({ setSearchType }: Props): ReactElement => {
+
   return (
     <StyledSearchTypeWrapper>
       <Badge
         onClick={() => {
           setSearchType({ subdirectory: SearchTypeSubdirectory.search, query: SearchTypeQuery.name });
         }}
+        padding="10px"
       >
         Search by name
       </Badge>
@@ -21,6 +23,7 @@ const SearchTypes = ({ setSearchType }: Props): ReactElement => {
         onClick={() => {
           setSearchType({ subdirectory: SearchTypeSubdirectory.search, query: SearchTypeQuery.firstLetter });
         }}
+        padding="10px"
       >
         Search by first letter
       </Badge>

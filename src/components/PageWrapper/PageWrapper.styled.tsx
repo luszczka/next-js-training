@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const StyledPageWrapper = styled.div<{ centered: boolean; isAnimated: boolean }>`
+const StyledPageWrapper = styled.div<{ centered?: boolean; isAnimated?: boolean }>`
   align-items: center;
   display: flex;
   flex-direction: column;
