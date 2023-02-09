@@ -23,7 +23,7 @@ export const StyledSingleBoxImg = styled.div<{ drinkImgUrl: string }>`
   ${({ drinkImgUrl }) =>
     drinkImgUrl &&
     css`
-      background-image: url(${drinkImgUrl});
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(${drinkImgUrl});
     `};
   width: 100%;
   height: 300px;
