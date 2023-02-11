@@ -5,6 +5,6 @@ export const StyledSearchTypeWrapper = styled.div`
   gap: 10px;
   justify-content: center;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 10px;
   width: 100%;
 `;

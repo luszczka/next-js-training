@@ -5,11 +5,12 @@ interface Props {
   children: string;
   onClick: MouseEventHandler<HTMLElement>;
   padding?: string;
+  isActive?: boolean;
 }
 
-const Badge = ({ children, onClick, padding }: Props): ReactElement => {
+const Badge = ({ children, onClick, padding, isActive }: Props): ReactElement => {
   return (
-    <StyledBadgeWrapper onClick={onClick} padding={padding}>
+    <StyledBadgeWrapper onClick={onClick} padding={padding} isActive={isActive}>
       {children}
     </StyledBadgeWrapper>
   );

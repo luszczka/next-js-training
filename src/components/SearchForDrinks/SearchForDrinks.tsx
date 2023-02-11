@@ -10,11 +10,15 @@ import { type SearchTypeProps, SearchTypeQuery, SearchTypeSubdirectory } from '.
 import { CreateFetchURL } from '../../utils/CreateFetchURL';
 import SearchTypes from './SearchType/SearchType';
 
-const SearchForDrinks = (): ReactElement => {
-  const [value, setValue] = useState<string>('');
+interface Props {
+  initialValue?: string;
+}
+
+const SearchForDrinks = ({ initialValue }: Props): ReactElement => {
+  const [value, setValue] = useState<string>(initialValue ?? '');
   const [searchType, setSearchType] = useState<SearchTypeProps>({
-    subdirectory: SearchTypeSubdirectory.search,
-    query: SearchTypeQuery.name,
+    subdirectory: initialValue ? SearchTypeSubdirectory.filter : SearchTypeSubdirectory.search,
+    query: initialValue ? SearchTypeQuery.ingredient : SearchTypeQuery.name,
   });
   const fetchUrl = CreateFetchURL({ searchType, value });
   const { data, fetcher } = useFetch<{ drinks: DrinksByName[] }>({ path: fetchUrl, enabled: false });
@@ -24,7 +28,7 @@ const SearchForDrinks = (): ReactElement => {
     if (value) {
       void debouncedOnChange.current(fetchUrl);
     }
-  }, [value]);
+  }, [value, searchType]);
 
   const { drinks } = data ?? {};
 
@@ -32,7 +36,7 @@ const SearchForDrinks = (): ReactElement => {
     <Container>
       <StyledInputWrapper>
         <InputSearch value={value} setValue={setValue} />
-        <SearchTypes setSearchType={setSearchType} />
+        <SearchTypes searchType={searchType} setSearchType={setSearchType} />
       </StyledInputWrapper>
       <StyledBoxesWrapper>
         {drinks === null && <div>no drinks in database</div>}

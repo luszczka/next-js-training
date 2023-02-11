@@ -20,6 +20,7 @@ import {
 import { type ParsedUrlQuery } from 'querystring';
 import Badge from '../../components/Badge/Badge';
 import { arrayFromExactData, DrinkDetailsEntries } from '../../utils/IngredientsArray';
+import Link from 'next/link';
 
 export interface QParams extends ParsedUrlQuery {
   drinkID: string;
@@ -53,9 +54,9 @@ const DrinkDetail = (): ReactElement => {
             <StyledIngredientsWrapper>
               {ingredientsArray.map((ingredient, index) => {
                 return (
-                  <Badge key={index} onClick={onClick}>
-                    {ingredient}
-                  </Badge>
+                  <Link href={{ pathname: `/dashboard`, query: { ingredient } }} key={index}>
+                    <Badge onClick={onClick}>{ingredient}</Badge>
+                  </Link>
                 );
               })}
             </StyledIngredientsWrapper>

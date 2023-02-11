@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledBadgeWrapper = styled.button<{
+  isActive?: boolean;
   padding?: string;
 }>`
   background-color: #b1893a;
@@ -15,11 +16,13 @@ export const StyledBadgeWrapper = styled.button<{
   padding: ${({ padding }) => padding ?? '20px'};
   width: fit-content;
 
-  &:hover {
-    opacity: 1;
-  }
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      opacity: 1;
+    `};
 
-  &:active {
+  &:hover {
     opacity: 1;
   }
 `;

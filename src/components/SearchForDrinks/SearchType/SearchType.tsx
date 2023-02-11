@@ -5,13 +5,14 @@ import { StyledSearchTypeWrapper } from './SearchType.styles';
 
 interface Props {
   setSearchType: Dispatch<SetStateAction<SearchTypeProps>>;
+  searchType: SearchTypeProps;
 }
 
-const SearchTypes = ({ setSearchType }: Props): ReactElement => {
-
+const SearchTypes = ({ setSearchType, searchType }: Props): ReactElement => {
   return (
     <StyledSearchTypeWrapper>
       <Badge
+        isActive={searchType.subdirectory === SearchTypeSubdirectory.search && searchType.query === SearchTypeQuery.name}
         onClick={() => {
           setSearchType({ subdirectory: SearchTypeSubdirectory.search, query: SearchTypeQuery.name });
         }}
@@ -20,12 +21,22 @@ const SearchTypes = ({ setSearchType }: Props): ReactElement => {
         Search by name
       </Badge>
       <Badge
+        isActive={searchType.subdirectory === SearchTypeSubdirectory.search && searchType.query === SearchTypeQuery.firstLetter}
         onClick={() => {
           setSearchType({ subdirectory: SearchTypeSubdirectory.search, query: SearchTypeQuery.firstLetter });
         }}
         padding="10px"
       >
         Search by first letter
+      </Badge>
+      <Badge
+        isActive={searchType.subdirectory === SearchTypeSubdirectory.filter && searchType.query === SearchTypeQuery.ingredient}
+        onClick={() => {
+          setSearchType({ subdirectory: SearchTypeSubdirectory.filter, query: SearchTypeQuery.ingredient });
+        }}
+        padding="10px"
+      >
+        Search by ingredient
       </Badge>
     </StyledSearchTypeWrapper>
   );
