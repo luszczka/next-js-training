@@ -18,8 +18,9 @@ import {
   StyledTextWrapper,
 } from './DrinkDetails.styles';
 import { type ParsedUrlQuery } from 'querystring';
-import Ingredient from '../../components/Ingredient/Ingredient';
+import Badge from '../../components/Badge/Badge';
 import { arrayFromExactData, DrinkDetailsEntries } from '../../utils/IngredientsArray';
+import Link from 'next/link';
 
 export interface QParams extends ParsedUrlQuery {
   drinkID: string;
@@ -35,6 +36,10 @@ const DrinkDetail = (): ReactElement => {
   const ingredientsArray = arrayFromExactData(data.drinks[0], DrinkDetailsEntries.ingredient);
   const measureArray = arrayFromExactData(data.drinks[0], DrinkDetailsEntries.measure);
 
+  const onClick = (): void => {
+    console.log('badge clicked');
+  };
+
   return (
     <PageWrapper>
       <Navigation />
@@ -48,7 +53,11 @@ const DrinkDetail = (): ReactElement => {
           <div>
             <StyledIngredientsWrapper>
               {ingredientsArray.map((ingredient, index) => {
-                return <Ingredient ingredient={ingredient} key={index} />;
+                return (
+                  <Link href={{ pathname: `/dashboard`, query: { ingredient } }} key={index}>
+                    <Badge onClick={onClick}>{ingredient}</Badge>
+                  </Link>
+                );
               })}
             </StyledIngredientsWrapper>
           </div>

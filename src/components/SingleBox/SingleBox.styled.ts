@@ -7,6 +7,7 @@ export const StyledSingleBoxWrapper = styled.div`
   max-width: 250px;
   overflow: hidden;
   width: 100%;
+  margin: 0 auto;
 
   &:hover {
     div {

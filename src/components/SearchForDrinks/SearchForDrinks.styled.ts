@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledInputWrapper = styled.div`
   align-items: center;
   display: flex;
+  flex-direction: column;
   width: 100%;
 `;
 

@@ -7,6 +7,7 @@ export const StyledBackgroundWrapper = styled.div<{
   min-height: 100vh;
   height: 100%;
   opacity: 0.09;
+  pointer-events: none;
   position: absolute;
 
   ${({ drinkImgUrl }) =>
